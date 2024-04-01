@@ -1,0 +1,18 @@
+<div class="hero-bg-gradient"></div>
+<div class="navigation-panel">
+  <div class="language-switcher-dropdown">
+    <div class="language-switcher-icon" (click)="toggleDropdown('language')">{{ 'navigationPanel.lang' | translate }}</div>
+    <div class="switcher-dropdown-content" [class.show]="showLanguageSwicherDropdown">
+      <div class="dropdown-item" (click)="translate.use('ru')">{{ 'navigationPanel.dropdownLangItems.RU' | translate }}</div>
+      <div class="dropdown-item" (click)="translate.use('en')">{{ 'navigationPanel.dropdownLangItems.EN' | translate }}</div>
+    </div>
+  </div>
+  <div class="user-dropdown">
+    <div class="user-icon" (click)="toggleDropdown('user')">{{ 'navigationPanel.userIcon' | translate }}</div>
+    <div class="user-dropdown-content" [class.show]="showUserDropdown">
+      <div class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.information' | translate }}</div>
+      <div class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.settings' | translate }}</div>
+      <div class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.logOut' | translate }}</div>
+    </div>
+  </div>
+</div>

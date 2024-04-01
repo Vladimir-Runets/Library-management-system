@@ -1,0 +1,15 @@
+{
+    "navigationPanel": {
+      "lang": "LANG",
+      "dropdownLangItems": {
+        "RU": "RUS",
+        "EN": "ENG"
+      },
+      "userIcon": "USER ICON",
+      "dropdownUserItems": {
+        "information": "INFORMATION",
+        "settings": "SETTINGS",
+        "logOut": "LOG OUT"
+      }
+    }
+  }

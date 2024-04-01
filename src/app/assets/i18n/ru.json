@@ -1,0 +1,15 @@
+{
+    "navigationPanel": {
+      "lang": "ЯЗЫК",
+      "dropdownLangItems": {
+        "RU": "РУС",
+        "EN": "ENG"
+      },
+      "userIcon": "ИКОНКА",
+      "dropdownUserItems": {
+        "information": "ИНФОРМАЦИЯ",
+        "settings": "НАСТРОЙКИ",
+        "logOut": "ВЫЙТИ"
+      }
+    }
+  }
