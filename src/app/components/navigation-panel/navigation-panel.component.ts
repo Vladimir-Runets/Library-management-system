@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-navigation-panel',
@@ -9,6 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavigationPanelComponent {
   showUserDropdown: boolean = false;
   showLanguageSwicherDropdown: boolean = false;
+  userIcon = faUser;
 
   constructor(public translate: TranslateService){}
 

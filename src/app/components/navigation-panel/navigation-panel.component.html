@@ -1,14 +1,14 @@
 <div class="hero-bg-gradient"></div>
 <div class="navigation-panel">
-  <div class="language-switcher-dropdown">
-    <div class="language-switcher-icon" (click)="toggleDropdown('language')">{{ 'navigationPanel.lang' | translate }}</div>
-    <div class="switcher-dropdown-content" [class.show]="showLanguageSwicherDropdown">
-      <div class="dropdown-item" (click)="translate.use('ru')">{{ 'navigationPanel.dropdownLangItems.RU' | translate }}</div>
-      <div class="dropdown-item" (click)="translate.use('en')">{{ 'navigationPanel.dropdownLangItems.EN' | translate }}</div>
-    </div>
-  </div>
+  <mat-form-field class="language-switcher-dropdown">
+    <mat-label class="language-switcher-icon" (click)="toggleDropdown('language')">{{ 'navigationPanel.lang' | translate }}</mat-label>
+    <mat-select class="switcher-dropdown-content" [class.show]="showLanguageSwicherDropdown">
+      <mat-option value="ru" class="dropdown-item" (click)="translate.use('ru')">{{ 'navigationPanel.dropdownLangItems.RU' | translate }}</mat-option>
+      <mat-option value="en" class="dropdown-item" (click)="translate.use('en')">{{ 'navigationPanel.dropdownLangItems.EN' | translate }}</mat-option>
+    </mat-select>
+  </mat-form-field>
   <div class="user-dropdown">
-    <div class="user-icon" (click)="toggleDropdown('user')">{{ 'navigationPanel.userIcon' | translate }}</div>
+    <fa-icon class="user-icon" [icon]="userIcon" (click)="toggleDropdown('user')"></fa-icon>
     <div class="user-dropdown-content" [class.show]="showUserDropdown">
       <div class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.information' | translate }}</div>
       <div class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.settings' | translate }}</div>
