@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 
@@ -7,15 +7,19 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
   templateUrl: './navigation-panel.component.html',
   styleUrls: ['./navigation-panel.component.scss']
 })
-export class NavigationPanelComponent {
+export class NavigationPanelComponent implements OnInit{
   showUserDropdown: boolean = false;
   showLanguageSwicherDropdown: boolean = false;
   userIcon = faUser;
+  language?: string;
 
   constructor(public translate: TranslateService){}
 
-  toggleDropdown(dropdown: string): void {
-    if (dropdown === 'user') this.showUserDropdown = !this.showUserDropdown;
-    else if (dropdown === 'language') this.showLanguageSwicherDropdown = !this.showLanguageSwicherDropdown;
+  ngOnInit(){
+    this.language = this.translate.defaultLang;
+  }
+
+  onLanguageChange(value: string){
+    this.translate.use(value);
   }
 }

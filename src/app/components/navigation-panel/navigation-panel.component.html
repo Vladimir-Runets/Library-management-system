@@ -1,18 +1,17 @@
-<div class="hero-bg-gradient"></div>
 <div class="navigation-panel">
+  <div class="logo"><img src="../assets/images/logo.png"/></div>
   <mat-form-field class="language-switcher-dropdown">
-    <mat-label class="language-switcher-icon" (click)="toggleDropdown('language')">{{ 'navigationPanel.lang' | translate }}</mat-label>
-    <mat-select class="switcher-dropdown-content" [class.show]="showLanguageSwicherDropdown">
-      <mat-option value="ru" class="dropdown-item" (click)="translate.use('ru')">{{ 'navigationPanel.dropdownLangItems.RU' | translate }}</mat-option>
-      <mat-option value="en" class="dropdown-item" (click)="translate.use('en')">{{ 'navigationPanel.dropdownLangItems.EN' | translate }}</mat-option>
-    </mat-select>
+    <select matNativeControl class="switcher-dropdown-content" [(ngModel)]="language" (ngModelChange)="onLanguageChange($event)">
+      <option value="ru" class="dropdown-item">{{ 'navigationPanel.dropdownLangItems.RU' | translate }}</option>
+      <option value="en" class="dropdown-item">{{ 'navigationPanel.dropdownLangItems.EN' | translate }}</option>
+    </select>
   </mat-form-field>
   <div class="user-dropdown">
-    <fa-icon class="user-icon" [icon]="userIcon" (click)="toggleDropdown('user')"></fa-icon>
-    <div class="user-dropdown-content" [class.show]="showUserDropdown">
-      <div class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.information' | translate }}</div>
-      <div class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.settings' | translate }}</div>
-      <div class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.logOut' | translate }}</div>
-    </div>
+    <fa-icon [matMenuTriggerFor]="menu" class="user-icon" [icon]="userIcon"></fa-icon>
+      <mat-menu #menu="matMenu" >
+      <div mat-menu-item class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.information' | translate }}</div>
+      <div mat-menu-item class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.settings' | translate }}</div>
+      <div mat-menu-item class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.logOut' | translate }}</div>
+    </mat-menu>
   </div>
 </div>
