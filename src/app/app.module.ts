@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationPanelModule } from './components/navigation-panel/navigation-panel.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { LoginPageModule } from './components/login-page/login-page.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     BrowserModule,
     AppRoutingModule,
     NavigationPanelModule,
+    LoginPageModule,
   ],
   providers: [
     provideAnimationsAsync()

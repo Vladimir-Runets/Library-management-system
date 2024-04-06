@@ -8,8 +8,6 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./navigation-panel.component.scss']
 })
 export class NavigationPanelComponent implements OnInit{
-  showUserDropdown: boolean = false;
-  showLanguageSwicherDropdown: boolean = false;
   userIcon = faUser;
   language?: string;
 
