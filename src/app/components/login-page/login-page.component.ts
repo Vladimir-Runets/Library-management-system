@@ -25,7 +25,7 @@ export class LoginPageComponent implements OnInit {
 
   onLogin(): void {
     if (this.loginForm && this.loginForm.valid) {
-      const { email, password } = this.loginForm?.getRawValue();
+      const { email, password } = this.loginForm.getRawValue();
       this.loginService.login(email, password);
     }
   }
