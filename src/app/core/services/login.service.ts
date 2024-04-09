@@ -1,26 +1,19 @@
 import { Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from './user.interface';
+import { User } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService implements OnInit{
+export class LoginService {
   isLogged = false;
   loggedUser: User | null = null;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
-
-  ngOnInit() {
-    console.log("NgOnInit");
+  constructor(private router: Router, private route: ActivatedRoute) {
     const userString = localStorage.getItem('user');
-    try {
-      if (userString) {
-        console.log("User has logged");
-        this.isLogged = true;
-      }
-    } catch (error) {
-      console.error('Error parsing user data from localStorage:', error);
+    if (userString) {
+      this.isLogged = true;
+      this.loggedUser = JSON.parse(userString);
     }
   }
 
@@ -29,15 +22,7 @@ export class LoginService implements OnInit{
     this.loggedUser = { username, password, lastLogged: new Date()};
     this.router.navigate(['/dashboard'], {relativeTo: this.route});
     localStorage.setItem('user', JSON.stringify(this.loggedUser));
-    const userString = localStorage.getItem('user');
-    try {
-      if (userString) {
-        console.log("JSON parsed");
-        console.log(JSON.parse(userString));
-      }
-    } catch (error) {
-      console.error('Error parsing user data from localStorage:', error);
-    }
+
     console.log("User logged");
   }
 

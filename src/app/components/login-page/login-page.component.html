@@ -4,7 +4,7 @@
       <div class="header">
         <h1>{{ translatorService.getTranslation('loginPage.signIntoAccount') }}</h1>
       </div>
-      <form name="loginForm" [formGroup]="loginForm">
+      <form name="loginForm" *ngIf="loginForm" [formGroup]="loginForm">
         <div class="emailInput">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Email</mat-label>
@@ -37,7 +37,7 @@
           </mat-error>
         </mat-form-field>
         </div>
-        <button mat-flat-button type="button" color="primary" (click)="loginForm.valid && loginService.login(loginForm.value.email, loginForm.value.password)">
+        <button mat-flat-button type="button" color="primary" (click)="onLogin()">
           {{ translatorService.getTranslation('loginPage.login') }}
         </button>
       </form>
