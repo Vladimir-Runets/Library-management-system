@@ -1,23 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Component } from '@angular/core';
+import { TranslatorService } from '../../core/translator.service';
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { LoginService } from '../../core/login.service';
 
 @Component({
   selector: 'app-navigation-panel',
   templateUrl: './navigation-panel.component.html',
   styleUrls: ['./navigation-panel.component.scss']
 })
-export class NavigationPanelComponent implements OnInit{
+export class NavigationPanelComponent{
   userIcon = faUser;
-  language?: string;
 
-  constructor(public translate: TranslateService){}
-
-  ngOnInit(){
-    this.language = this.translate.defaultLang;
-  }
-
-  onLanguageChange(value: string){
-    this.translate.use(value);
-  }
+  constructor(public translatorService: TranslatorService, public loginService: LoginService){}
 }

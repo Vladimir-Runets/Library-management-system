@@ -11,5 +11,12 @@
         "settings": "НАСТРОЙКИ",
         "logOut": "ВЫЙТИ"
       }
+    },
+    "loginPage": {
+      "signIntoAccount": "Войдите в свой аккаунт",
+      "forgotPassword": "Забыли пароль?",
+      "password": "Пароль",
+      "createAccount": "Создать новый аккаунт",
+      "login": "Войти"
     }
   }

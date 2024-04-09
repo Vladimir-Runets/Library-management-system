@@ -2,9 +2,9 @@
   <mat-card>
     <mat-card-content>
       <div class="header">
-        <h1>Sign Into Your Account</h1>
+        <h1>{{ translatorService.getTranslation('loginPage.signIntoAccount') }}</h1>
       </div>
-      <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+      <form name="loginForm" [formGroup]="loginForm">
         <div class="emailInput">
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Email</mat-label>
@@ -21,10 +21,10 @@
 
         <div>
           <span>
-            <a class="text-link" class="aLink" routerLink="/auth/forgot-password">Forgot Password?</a>
+            <a class="text-link" class="aLink" routerLink="/auth/forgot-password">{{ translatorService.getTranslation('loginPage.forgotPassword') }}</a>
           </span>
           <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Password</mat-label>
+            <mat-label>{{ translatorService.getTranslation('loginPage.password') }}</mat-label>
             <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
             <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
             [attr.aria-pressed]="hide">
@@ -37,11 +37,13 @@
           </mat-error>
         </mat-form-field>
         </div>
-        <button mat-flat-button color="primary">Login</button>
+        <button mat-flat-button type="button" color="primary" (click)="loginForm.valid && loginService.login(loginForm.value.email, loginForm.value.password)">
+          {{ translatorService.getTranslation('loginPage.login') }}
+        </button>
       </form>
 
       <div class="button-row">
-        <p>Create New Account</p>
+        <p>{{ translatorService.getTranslation('loginPage.createAccount') }}</p>
       </div>
     </mat-card-content>
   </mat-card>
