@@ -22,8 +22,6 @@ export class LoginService {
     this.loggedUser = { username, password, lastLogged: new Date()};
     this.router.navigate(['/dashboard'], {relativeTo: this.route});
     localStorage.setItem('user', JSON.stringify(this.loggedUser));
-
-    console.log("User logged");
   }
 
   logOut(): void {
@@ -31,6 +29,5 @@ export class LoginService {
     this.loggedUser = null;
     this.router.navigate(['/login'], {relativeTo: this.route});
     localStorage.removeItem('user');
-    console.log("User unlogged");
   }
 }

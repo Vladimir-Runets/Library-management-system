@@ -1,9 +1,18 @@
+@import '../../../app/assets/colors/variables.scss';
+
 .login-container{
-  background-image: linear-gradient(to bottom,  #ef73be, #BABAD6);
+  background-image: linear-gradient(to bottom, $highlighted-background , $default-background);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.lang-switcher{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 40px;
 }
 
 mat-card { 
@@ -16,14 +25,14 @@ mat-card {
 }
 
 mat-card:hover {
-  box-shadow: 0 0 10px 5px #BABAD6; 
+  box-shadow: 0 0 10px 5px $default-background; 
 }
 
 ::ng-deep{
   .mat-mdc-unelevated-button .mat-mdc-button-touch-target {
     max-height: 40px;
     border-radius: 5px;
-    background-image: linear-gradient(to top,  #ef73be, #BABAD6);
+    background-image: linear-gradient(to top, $highlighted-background, $default-background);
   }
 
   .mdc-button__label {

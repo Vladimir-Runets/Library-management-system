@@ -1,0 +1,6 @@
+<mat-form-field class="language-switcher-dropdown">
+    <select matNativeControl class="switcher-dropdown-content" [(ngModel)]="translatorService.language" (ngModelChange)="translatorService.onLanguageChange($event)">
+      <option value="ru" class="dropdown-item">{{ translatorService.getTranslation('navigationPanel.dropdownLangItems.RU') }}</option>
+      <option value="en" class="dropdown-item">{{ translatorService.getTranslation('navigationPanel.dropdownLangItems.EN') }}</option>
+    </select>
+</mat-form-field>

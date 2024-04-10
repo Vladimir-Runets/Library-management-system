@@ -1,12 +1,10 @@
 <div class="navigation-panel">
   <div class="logo"><img src="../assets/images/logo.png" alt=""/></div>
-  <mat-form-field class="language-switcher-dropdown">
-    <select matNativeControl class="switcher-dropdown-content" [(ngModel)]="translatorService.language" (ngModelChange)="translatorService.onLanguageChange($event)">
-      <option value="ru" class="dropdown-item">{{ translatorService.getTranslation('navigationPanel.dropdownLangItems.RU') }}</option>
-      <option value="en" class="dropdown-item">{{ translatorService.getTranslation('navigationPanel.dropdownLangItems.EN') }}</option>
-    </select>
-  </mat-form-field>
-  <div class="user-dropdown">
+  <div class="container">
+    <div>
+      <app-language-switcher></app-language-switcher>
+    </div>
+    <div class="user-dropdown">
     <fa-icon [matMenuTriggerFor]="menu" class="user-icon" [icon]="userIcon"></fa-icon>
       <mat-menu #menu="matMenu" >
       <div mat-menu-item class="dropdown-item">{{ translatorService.getTranslation('navigationPanel.dropdownUserItems.information') }}</div>
@@ -14,4 +12,6 @@
       <div mat-menu-item class="dropdown-item" (click)="loginService.logOut()">{{ translatorService.getTranslation('navigationPanel.dropdownUserItems.logOut') }}</div>
     </mat-menu>
   </div>
+  </div>
+  
 </div>
