@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { SharedModule } from '../../shared/shared.module';
+import { BookModule } from '../books/book.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SharedModule } from '../../shared/shared.module';
     MatInputModule,
     MatFormFieldModule,
     MatMenuModule,
-    SharedModule
+    SharedModule,
+    BookModule,
   ],
   exports: [
     NavigationPanelComponent
