@@ -1,17 +1,17 @@
 <div class="navigation-panel">
-  <div class="logo"><img src="../assets/images/logo.png"/></div>
-  <mat-form-field class="language-switcher-dropdown">
-    <select matNativeControl class="switcher-dropdown-content" [(ngModel)]="language" (ngModelChange)="onLanguageChange($event)">
-      <option value="ru" class="dropdown-item">{{ 'navigationPanel.dropdownLangItems.RU' | translate }}</option>
-      <option value="en" class="dropdown-item">{{ 'navigationPanel.dropdownLangItems.EN' | translate }}</option>
-    </select>
-  </mat-form-field>
-  <div class="user-dropdown">
+  <div class="logo"><img src="../assets/images/logo.png" alt=""/></div>
+  <div class="container">
+    <div>
+      <app-language-switcher></app-language-switcher>
+    </div>
+    <div class="user-dropdown">
     <fa-icon [matMenuTriggerFor]="menu" class="user-icon" [icon]="userIcon"></fa-icon>
       <mat-menu #menu="matMenu" >
-      <div mat-menu-item class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.information' | translate }}</div>
-      <div mat-menu-item class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.settings' | translate }}</div>
-      <div mat-menu-item class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.logOut' | translate }}</div>
+      <div mat-menu-item class="dropdown-item">{{ translatorService.getTranslation('navigationPanel.dropdownUserItems.information') }}</div>
+      <div mat-menu-item class="dropdown-item">{{ translatorService.getTranslation('navigationPanel.dropdownUserItems.settings') }}</div>
+      <div mat-menu-item class="dropdown-item" (click)="loginService.logOut()">{{ translatorService.getTranslation('navigationPanel.dropdownUserItems.logOut') }}</div>
     </mat-menu>
   </div>
+  </div>
+  
 </div>

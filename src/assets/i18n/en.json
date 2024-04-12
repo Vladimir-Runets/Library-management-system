@@ -11,5 +11,12 @@
         "settings": "SETTINGS",
         "logOut": "LOG OUT"
       }
+    },
+    "loginPage": {
+      "signIntoAccount": "Sign Into Your Account",
+      "forgotPassword": "Forgot Password?",
+      "password": "Password",
+      "createAccount": "Create New Account",
+      "login": "Login"
     }
   }

@@ -1,0 +1,53 @@
+<div class="login-container">
+  <div class="lang-switcher">
+    <app-language-switcher></app-language-switcher>
+  </div>
+  <mat-card>
+    <mat-card-content>
+      <div class="header">
+        <h1>{{ translatorService.getTranslation('loginPage.signIntoAccount') }}</h1>
+      </div>
+      <form name="loginForm" *ngIf="loginForm" [formGroup]="loginForm">
+        <div class="emailInput">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              formControlName="email"
+              matInput
+              placeholder="Enter email address" required
+            />
+            <mat-error *ngIf="!loginForm.controls['email'].valid">
+                Email is required
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <span>
+            <a class="text-link" class="aLink" routerLink="/auth/forgot-password">{{ translatorService.getTranslation('loginPage.forgotPassword') }}</a>
+          </span>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>{{ translatorService.getTranslation('loginPage.password') }}</mat-label>
+            <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
+            <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>
+                {{hide ? 'visibility_off' : 'visibility'}}
+            </mat-icon>
+        </button>
+        <mat-error *ngIf="!loginForm.controls['password'].valid">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+        </div>
+        <button mat-flat-button type="button" color="primary" (click)="onLogin()">
+          {{ translatorService.getTranslation('loginPage.login') }}
+        </button>
+      </form>
+
+      <div class="button-row">
+        <p>{{ translatorService.getTranslation('loginPage.createAccount') }}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

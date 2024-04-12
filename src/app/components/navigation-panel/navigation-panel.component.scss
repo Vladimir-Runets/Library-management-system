@@ -1,12 +1,20 @@
+@import '../../../app/assets/colors/variables.scss';
+
 .navigation-panel {
-  background-color: #BABAD6;
+  background-color: $default-header;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 124px;
 }
 
+.container{
+  display: flex;
+  align-items: center;
+}
+
 .user-icon {
+  color: rgb(129, 114, 140);
   margin-right: 100px;
   font-size: 50px;
 }
