@@ -1,0 +1,17 @@
+<mat-card class="book-card">
+  <div class="card-content">
+    <div class="book-image" *ngIf="book?.imageUrl">
+      <img src="{{ book?.imageUrl }}" alt="Photo of book">
+    </div>
+    <div class="text-content">
+      <div class="title">{{ book?.title }}</div>
+      <div class="author">{{ book?.author }}</div>
+      <div class="description">{{ book?.description }}</div>
+      <div class="genre">{{ book?.genre }}</div>
+      <div class="status">
+        <span class="status-indicator" [ngClass]="{ 'green': book?.status === bookStatus.Available, 'red': book?.status === bookStatus.Borrowed , 'yellow': book?.status === bookStatus.Planned }"></span>
+        {{ book?.status }}
+      </div>
+    </div>
+  </div>
+</mat-card>

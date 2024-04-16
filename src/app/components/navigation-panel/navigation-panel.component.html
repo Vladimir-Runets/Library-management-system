@@ -16,10 +16,6 @@
   </div>
   </div>
 <div class="cards-container">
-  <book-card></book-card>
-  <book-card></book-card>
-  <book-card></book-card>
-  <book-card></book-card>
-  <book-card></book-card>
+  <book-card *ngFor="let book of books" [book]="book"></book-card>
 </div>
 </div>
