@@ -9,6 +9,8 @@ import { LoginPageModule } from './components/login-page/login-page.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AdministrationModule } from './components/administration/administration.module';
+import { DashboardModule } from './components/dashboard/dashboard.module';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -24,6 +26,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
     NavigationPanelModule,
     LoginPageModule,
     HttpClientModule,
+    AdministrationModule,
+    DashboardModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

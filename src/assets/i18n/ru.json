@@ -10,13 +10,20 @@
         "information": "ИНФОРМАЦИЯ",
         "settings": "НАСТРОЙКИ",
         "logOut": "ВЫЙТИ"
-      }
+      },
+      "Dashboard": "Приборная панель",
+      "Administration": "Администрация"
     },
     "loginPage": {
       "signIntoAccount": "Войдите в свой аккаунт",
       "forgotPassword": "Забыли пароль?",
       "password": "Пароль",
       "createAccount": "Создать новый аккаунт",
-      "login": "Войти"
+      "login": "Войти",
+      "userLogin": "Логин", 
+      "loginLengthWarning": "Неправильный логин. Минимальная длина: 3.",
+      "passwordLengthWarning": "Неправильный пароль. Минимальная длина: 6.",
+      "enterLogin": "Введите логин",
+      "userUndefinedWarning": "Такой пользователь не найден, попробуйте ещё раз."
     }
   }
