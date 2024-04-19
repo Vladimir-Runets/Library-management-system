@@ -8,16 +8,16 @@
         <h1>{{ translatorService.getTranslation('loginPage.signIntoAccount') }}</h1>
       </div>
       <form name="loginForm" *ngIf="loginForm" [formGroup]="loginForm">
-        <div class="emailInput">
+        <div class="loginInput">
           <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Email</mat-label>
+            <mat-label>{{ translatorService.getTranslation('loginPage.userLogin') }}</mat-label>
             <input
-              formControlName="email"
+              formControlName="login"
               matInput
-              placeholder="Enter email address" required
+              [placeholder]="translatorService.getTranslation('loginPage.enterLogin')" required
             />
-            <mat-error *ngIf="!loginForm.controls['email'].valid">
-                Email is required
+            <mat-error *ngIf="!loginForm.controls['login'].valid">
+              {{ translatorService.getTranslation('loginPage.loginLengthWarning') }}
               </mat-error>
           </mat-form-field>
         </div>
@@ -36,7 +36,7 @@
             </mat-icon>
         </button>
         <mat-error *ngIf="!loginForm.controls['password'].valid">
-            Password is required
+          {{ translatorService.getTranslation('loginPage.passwordLengthWarning') }}
           </mat-error>
         </mat-form-field>
         </div>
@@ -50,4 +50,9 @@
       </div>
     </mat-card-content>
   </mat-card>
+</div>
+<div *ngIf="loginService.showErrorMessage" class="error-message">
+  <img src="../assets/images/notFound.png" alt=""/>
+  <span>{{ translatorService.getTranslation('loginPage.userUndefinedWarning') }}</span>
+  <button (click)="dismissErrorMessage()" class="close-button">✕</button>
 </div>

@@ -10,7 +10,6 @@ import { LoginService } from '../../core/services/login.service';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
-
   hide: boolean = true;
   loginForm?: FormGroup;
 
@@ -18,15 +17,19 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      login: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
   onLogin(): void {
     if (this.loginForm && this.loginForm.valid) {
-      const { email, password } = this.loginForm.getRawValue();
-      this.loginService.login(email, password);
+      const { login, password } = this.loginForm.getRawValue();
+      this.loginService.login(login, password);
     }
+  }
+
+  dismissErrorMessage(){
+    this.loginService.showErrorMessage = false;
   }
 }

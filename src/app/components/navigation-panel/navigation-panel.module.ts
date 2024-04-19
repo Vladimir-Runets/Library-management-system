@@ -8,7 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { SharedModule } from '../../shared/shared.module';
-import { BookModule } from '../book/book.module';
 
 @NgModule({
   declarations: [
@@ -23,10 +22,9 @@ import { BookModule } from '../book/book.module';
     MatFormFieldModule,
     MatMenuModule,
     SharedModule,
-    BookModule,
   ],
   exports: [
     NavigationPanelComponent
   ]
 })
-export class NavigationPanelModule { }
+export class NavigationPanelModule {}

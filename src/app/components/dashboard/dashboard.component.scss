@@ -1,0 +1,30 @@
+@import '../../../app/assets/colors/variables.scss';
+
+.main-container {
+  height: 100vh;
+  overflow-y: auto;
+  background-color: $light-background;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+}
+
+@media (max-width: $large-breakpoint) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (max-width: $medium-breakpoint) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: $small-breakpoint) {
+  .cards-container {
+    grid-template-columns: repeat(1, 1fr); 
+  }
+}

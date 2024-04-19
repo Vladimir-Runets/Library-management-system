@@ -22,7 +22,8 @@ const books: Book[] = [
     borrower: {
       username: "Vova@gmail.com",
       password: "g1h2t34",
-      lastLogged: new Date()
+      lastLogged: new Date(),
+      role: "user"
     },
   },
   {
@@ -45,7 +46,8 @@ const books: Book[] = [
     borrower: {
       username: "Vladimir@gmail.com",
       password: "K1o7p9",
-      lastLogged: new Date()
+      lastLogged: new Date(),
+      role: "user"
     },
   },
   {
@@ -59,7 +61,8 @@ const books: Book[] = [
     borrower: {
       username: "Vlad@gmail.com",
       password: "manera123",
-      lastLogged: new Date()
+      lastLogged: new Date(),
+      role: "user"
     },
   },
 ];
