@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TranslatorService } from '../../core/services/translator.service';
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { LoginService } from '../../core/services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation-panel',
@@ -11,5 +12,9 @@ import { LoginService } from '../../core/services/login.service';
 export class NavigationPanelComponent{
   userIcon = faUser;
 
-  constructor(public translatorService: TranslatorService, public loginService: LoginService){}
+  constructor(public translatorService: TranslatorService, public loginService: LoginService, private router: Router){}
+
+  navigateTo(route: string) {
+    this.router.navigate([route]);
+  }
 }

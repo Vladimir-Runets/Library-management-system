@@ -10,13 +10,20 @@
         "information": "INFORMATION",
         "settings": "SETTINGS",
         "logOut": "LOG OUT"
-      }
+      },
+      "Dashboard": "Dashboard",
+      "Administration": "Administration"
     },
     "loginPage": {
       "signIntoAccount": "Sign Into Your Account",
       "forgotPassword": "Forgot Password?",
       "password": "Password",
       "createAccount": "Create New Account",
-      "login": "Login"
+      "login": "Login",
+      "userLogin": "Login",
+      "loginLengthWarning": "Login is required. Minimum length: 3.",
+      "passwordLengthWarning": "Password is required. Minimum length: 6.",
+      "enterLogin": "Enter login",
+      "userUndefinedWarning": "No such user found, try again."
     }
   }

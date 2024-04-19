@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { SharedModule } from '../../shared/shared.module';
+import { LoginService } from '../../core/services/login.service';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,14 @@ import { SharedModule } from '../../shared/shared.module';
     MatInputModule,
     MatFormFieldModule,
     MatMenuModule,
-    SharedModule
+    SharedModule,
   ],
   exports: [
     NavigationPanelComponent
   ]
 })
-export class NavigationPanelModule { }
+export class NavigationPanelModule { 
+
+  constructor(loginService: LoginService) {}
+
+}

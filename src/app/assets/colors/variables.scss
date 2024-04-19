@@ -1,19 +1,22 @@
 // Основные цвета
 $primary-color: #BABAD6;
 $secondary-color: #ef73be;
-
-// Оттенки цветов
-$light-primary: lighten($primary-color, 10%);
-$dark-primary: darken($primary-color, 10%);
-$light-secondary: lighten($secondary-color, 10%);
-$dark-secondary: darken($secondary-color, 10%);
+$third-color: #ecc2db;
+$fourth-color: #81728c;
+$fifth-color: #eb8cc5;
+$pastel-color: #f2e8e8;
+$extra-large-breakpoint: 1600px;
+$large-breakpoint: 1200px;
+$medium-breakpoint: 768px;
+$small-breakpoint: 400px;
 
 // Пресеты для фона
 $default-background: $primary-color;
-$light-background: $light-primary;
 $highlighted-background: $secondary-color;
+$light-background: $third-color;
+$book-card-background: $fifth-color;
 
 // Пресеты для заголовков
 $default-header: $primary-color;
-$light-header: $light-secondary;
-$highlighted-header: $dark-primary;
+$dark-header: $fourth-color;
+$highlighted-header: $secondary-color;

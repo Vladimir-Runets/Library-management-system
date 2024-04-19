@@ -1,0 +1,89 @@
+@import '../../../app/assets/colors/variables.scss';
+
+.book-card {
+  background-color: $book-card-background;
+  margin: 5% 5% 0% 5%;
+  display: flex;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+  background-color: $pastel-color;
+  border-color: $primary-color;
+  box-shadow: 0 0 10px 5px $primary-color;
+}
+
+.card-content {
+  display: flex;
+}
+
+.book-image {
+  width: 25%;
+}
+
+.book-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-content {
+  flex: 1;
+  margin: 25px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.author {
+  font-size: smaller;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.description {
+  margin-top: 10px;
+}
+
+.genre {
+  margin-top: 5px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+@media (max-width: $medium-breakpoint) {
+  .card-content {
+    flex-direction: column;
+  }
+
+  .book-image, .book-image img {
+    width: 100%;
+  }
+}
