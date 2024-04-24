@@ -5,10 +5,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { LanguageSwitcherComponent } from './widgets/language-switcher.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalWindowDialogComponent } from './dialogs/modal-window.component';
+import { MatIconModule } from '@angular/material/icon';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
-    LanguageSwitcherComponent
+    LanguageSwitcherComponent, 
+    ModalWindowDialogComponent
   ],
   imports: [
     FormsModule,
@@ -16,10 +22,15 @@ import { MatInputModule } from '@angular/material/input';
     BrowserModule,
     MatSelectModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule,
+    MatIconModule,
+    FontAwesomeModule,
+    MatMenuModule
   ],
   exports: [
-    LanguageSwitcherComponent
+    LanguageSwitcherComponent,
+    ModalWindowDialogComponent
   ]
 })
 export class SharedModule { }

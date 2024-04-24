@@ -71,10 +71,6 @@
   width: 50px;
 }
 
-.dropdown-item {
-  font-size: 20px;
-}
-
 .logo {
   margin-right: auto;
   align-self: flex-start;
@@ -84,12 +80,12 @@
   height: 100px;
 }
 
-::ng-deep{
-  mat-form-field{
-    display: flex;
-    padding-top: 20px;
-    padding-right: 100px;
-    height:70px;
-    width: 80px;
+@media (max-width: 768px) {
+  .logo img {
+    display: none;
+  }
+
+  .container {
+    align-self: center;
   }
 }

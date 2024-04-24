@@ -1,0 +1,11 @@
+@import '../../../app/assets/colors/variables.scss';
+
+.language-switcher-dropdown {
+    font-size: 2.5em;
+    margin-right: 3em;
+    cursor: pointer;
+}
+
+fa-icon {
+    color: $fourth-color;
+}
