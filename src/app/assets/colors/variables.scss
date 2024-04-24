@@ -1,22 +1,22 @@
-// Основные цвета
 $primary-color: #BABAD6;
 $secondary-color: #ef73be;
 $third-color: #ecc2db;
 $fourth-color: #81728c;
 $fifth-color: #eb8cc5;
 $pastel-color: #f2e8e8;
+$first-button-color: #e91a1a;
+$second-button-color: #000098;
+$third-button-color: #b710b7;
 $extra-large-breakpoint: 1600px;
 $large-breakpoint: 1200px;
 $medium-breakpoint: 768px;
 $small-breakpoint: 400px;
 
-// Пресеты для фона
 $default-background: $primary-color;
 $highlighted-background: $secondary-color;
 $light-background: $third-color;
 $book-card-background: $fifth-color;
 
-// Пресеты для заголовков
 $default-header: $primary-color;
 $dark-header: $fourth-color;
 $highlighted-header: $secondary-color;

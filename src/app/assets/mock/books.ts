@@ -33,7 +33,7 @@ const books: Book[] = [
     author: "Author 3",
     description: "Description of Book 3",
     addedDate: new Date(),
-    status: BookStatus.Planned,
+    status: BookStatus.Available,
   },
   {
     imageUrl: "/assets/images/book4.png",
@@ -55,7 +55,7 @@ const books: Book[] = [
     title: "Book 5",
     genre: "Genre 5",
     author: "Author 5",
-    description: "Description of Book5",
+    description: "Description of Book 5",
     addedDate: new Date(),
     status: BookStatus.Borrowed,
     borrower: {

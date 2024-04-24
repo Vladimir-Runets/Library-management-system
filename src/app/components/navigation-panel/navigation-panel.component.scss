@@ -64,21 +64,11 @@
   cursor: pointer;
 }
 
-.user-icon {
-  color: $dark-header;
-  margin-right: 100px;
-  font-size: 50px;
-}
-
 .user-dropdown {
   display: flex;
   justify-content: center;
   height: 55px;
   width: 50px;
-}
-
-.dropdown-item {
-  font-size: 20px;
 }
 
 .logo {
@@ -90,12 +80,12 @@
   height: 100px;
 }
 
-::ng-deep{
-  mat-form-field{
-    display: flex;
-    padding-top: 20px;
-    padding-right: 100px;
-    height:70px;
-    width: 80px;
+@media (max-width: 768px) {
+  .logo img {
+    display: none;
+  }
+
+  .container {
+    align-self: center;
   }
 }

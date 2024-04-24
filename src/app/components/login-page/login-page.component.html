@@ -26,7 +26,7 @@
           <span>
             <a class="text-link" class="aLink" routerLink="/auth/forgot-password">{{ translatorService.getTranslation('loginPage.forgotPassword') }}</a>
           </span>
-          <mat-form-field class="full-width" appearance="outline">
+          <mat-form-field class="full-width password-field" appearance="outline">
             <mat-label>{{ translatorService.getTranslation('loginPage.password') }}</mat-label>
             <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
             <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"

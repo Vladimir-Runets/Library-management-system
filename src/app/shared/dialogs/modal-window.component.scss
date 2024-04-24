@@ -1,0 +1,68 @@
+@import '../../../app/assets/colors/variables.scss';
+
+:host {
+    display: block;
+    width: 60em;
+    background-color: $fourth-color;
+}
+
+label {
+    font-weight: bold;
+}
+
+.add-book-form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.book-container{
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    min-width: 50%;
+}
+
+.book-cover {
+    width: 40%;
+}
+  
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cancel-button, .submit-button{
+    font-size: 1.4em;
+    width: 4.2em;
+    height: 1.8em;
+    margin: .25em 0 .7em .7em;
+    background-color: $first-button-color;
+    border-radius: .15em;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.submit-button{
+    background-color: $second-button-color;
+}
+
+.xmark{
+    width: 3em;
+    height: 3em;
+    border: none;
+    border-radius: 50%;
+    margin: 1em 1em 1em auto;
+}
+
+.xmark:hover{
+    background-color: $first-button-color;
+}
+
+.panel{
+    height: 4em;
+    display: flex;
+    flex-direction: row;
+}

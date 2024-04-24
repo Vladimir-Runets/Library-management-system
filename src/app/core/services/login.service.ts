@@ -10,14 +10,9 @@ export class LoginService {
   isLogged = false;
   loggedUser: User | null = null;
   showErrorMessage:boolean = false;
+  localStorageKey = 'loggedInUser';
 
-  constructor(private router: Router, private route: ActivatedRoute) {
-    const userString = localStorage.getItem('user');
-    if (userString) {
-      this.isLogged = true;
-      this.loggedUser = JSON.parse(userString);
-    }
-  }
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   login(username: string, password: string): void {
     const user = users.find((user: User) => user.username === username && user.password === password); 
@@ -25,6 +20,7 @@ export class LoginService {
     if (user) {
       this.isLogged = true;
       this.loggedUser = user;
+      localStorage.setItem(this.localStorageKey, JSON.stringify(user));
       if(user.role === "Admin"){
         this.router.navigate(['/administration'], {relativeTo: this.route});
       }
@@ -39,6 +35,7 @@ export class LoginService {
   logOut(): void {
     this.isLogged = false;
     this.loggedUser = null;
+    localStorage.removeItem(this.localStorageKey);
     this.router.navigate(['/login'], {relativeTo: this.route});
   }
 }

@@ -3,6 +3,7 @@ import { TranslatorService } from '../../core/services/translator.service';
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { LoginService } from '../../core/services/login.service';
 import { Router } from '@angular/router';
+import { User } from '../../../app/core/interfaces/user.interface';
 
 @Component({
   selector: 'app-navigation-panel',
@@ -16,5 +17,11 @@ export class NavigationPanelComponent{
 
   navigateTo(route: string) {
     this.router.navigate([route]);
+  }
+
+  isAdminIn(): boolean{
+    const isAdminIn = localStorage.getItem(this.loginService.localStorageKey);
+    const user: User | null = isAdminIn ? JSON.parse(isAdminIn) : null;
+    return user?.role === 'Admin' || this.loginService.loggedUser?.role === 'Admin';
   }
 }
