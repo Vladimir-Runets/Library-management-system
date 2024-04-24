@@ -9,7 +9,7 @@ import { LibraryService } from '../../core/services/library.service';
   templateUrl: './modal-window.component.html',
   styleUrls: ['./modal-window.component.scss']
 })
-export class ModalWindowDialog {
+export class ModalWindowDialogComponent {
 
   constructor(private libraryService: LibraryService){}
 

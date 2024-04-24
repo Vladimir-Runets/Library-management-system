@@ -5,7 +5,7 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { Book } from '../../../app/core/interfaces/book.interface';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalWindowDialog } from '../../shared/dialogs/modal-window.component';
+import { ModalWindowDialogComponent } from '../../shared/dialogs/modal-window.component';
 import { LibraryService } from '../../core/services/library.service';
 import { ngxCsv } from 'ngx-csv/ngx-csv';
 import { BookStatus } from '../../core/enums/book-status.enum';
@@ -47,7 +47,7 @@ export class AdministrationComponent implements AfterViewInit, OnInit {
   }
 
   openAddBookDialog() {
-    this.dialog.open(ModalWindowDialog);
+    this.dialog.open(ModalWindowDialogComponent);
   }
 
   exportLibraryToCSV(): void {

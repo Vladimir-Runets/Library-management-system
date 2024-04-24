@@ -6,7 +6,7 @@ import { LanguageSwitcherComponent } from './widgets/language-switcher.component
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ModalWindowDialog } from './dialogs/modal-window.component';
+import { ModalWindowDialogComponent } from './dialogs/modal-window.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatMenuModule } from '@angular/material/menu';
@@ -14,7 +14,7 @@ import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [
     LanguageSwitcherComponent, 
-    ModalWindowDialog
+    ModalWindowDialogComponent
   ],
   imports: [
     FormsModule,
@@ -30,7 +30,7 @@ import { MatMenuModule } from '@angular/material/menu';
   ],
   exports: [
     LanguageSwitcherComponent,
-    ModalWindowDialog
+    ModalWindowDialogComponent
   ]
 })
 export class SharedModule { }

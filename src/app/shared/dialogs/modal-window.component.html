@@ -6,15 +6,14 @@
 </div>
 <div mat-dialog-content class="add-book-form">
   <div class="book-container">
-    <label>Book Title</label>
     <mat-form-field>
+      <mat-label>Book Title</mat-label>
       <input matInput placeholder="Enter the title of the book" [(ngModel)]="book.title">
     </mat-form-field>
-    <label>Writer's Name</label>
     <mat-form-field>
+      <mat-label>Writer's Name</mat-label>
       <input matInput placeholder="The name of the author of the book" [(ngModel)]="book.author">
     </mat-form-field>
-    <label>Book Genre</label>
     <mat-form-field>
       <mat-label>Choose your genre</mat-label>
       <mat-select [(ngModel)]="book.genre" name="genre">
@@ -23,8 +22,8 @@
         }
       </mat-select>
     </mat-form-field>
-    <label>Short Description</label>
     <mat-form-field>
+      <mat-label>Short Description</mat-label>
       <textarea matInput placeholder="Short Description of the book" [(ngModel)]="book.description" rows="3"></textarea>
     </mat-form-field>
   </div>
