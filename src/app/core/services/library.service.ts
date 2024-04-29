@@ -15,6 +15,7 @@ import { ModalWindowDialogComponent } from '../../shared/dialogs/modal-window.co
 export class LibraryService {
   localStorageKey = 'localBooks';
   header: boolean = false;
+  editedBookIndex!: number;
   private books: Book[] = [];
   private booksSubject$: BehaviorSubject<Book[]> = new BehaviorSubject<Book[]>(books);
 
@@ -38,21 +39,30 @@ export class LibraryService {
     this.booksSubject$.next(this.books);
   }
 
-  deleteBook(book: Book) {
+  deleteBook(book: Book): void {
     const index = this.books.indexOf(book);
     this.books.splice(index, 1);
     localStorage.setItem(this.localStorageKey, JSON.stringify(this.books));
     this.booksSubject$.next(this.books);
   }
 
-  editBook(book: Book) {
-    console.log(book);
-    //this.dialog.open(ModalWindowDialogComponent);
+  saveChanges(book: Book): void{
+    this.books[this.editedBookIndex] = book;
+    localStorage.setItem(this.localStorageKey, JSON.stringify(this.books));
+    this.booksSubject$.next(this.books);
   }
 
+  openEditBookDialog(book: Book): void {
+    this.editedBookIndex = this.books.indexOf(book);
+    this.dialog.open(ModalWindowDialogComponent, {
+      data: { book, isAddButtonClicked: false}
+    });
+  }
   
-  openAddBookDialog() {
-    this.dialog.open(ModalWindowDialogComponent);
+  openAddBookDialog(): void {
+    this.dialog.open(ModalWindowDialogComponent, {
+      data: { isAddButtonClicked: true }
+    });
   }
 
   public exportLibraryToCSV(): void {
