@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LibraryService } from '../../core/services/library.service';
+import { Book } from '../../core/interfaces/book.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,13 +9,11 @@ import { LibraryService } from '../../core/services/library.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit{
-  books = this.libraryService.getStarterBooks();
+  books$?: Observable<Book[]>;
 
   constructor(private libraryService: LibraryService){}
 
   ngOnInit(): void {
-    this.libraryService.getBooks().subscribe(books => {
-      this.books = books;
-    });
+    this.books$ = this.libraryService.getBooks;
   }
 }
