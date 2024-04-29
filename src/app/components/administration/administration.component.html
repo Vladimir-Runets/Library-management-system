@@ -1,15 +1,15 @@
 <div class="main-container">
   <app-navigation-panel></app-navigation-panel>
   <div class="button-container">
-    <button mat-raised-button (click)="openAddBookDialog()" class="add-button">
+    <button mat-raised-button (click)="libraryService.openAddBookDialog()" class="add-button">
       Add book
     </button>
-    <button mat-raised-button (click)="exportLibraryToCSV()" class="export-button">
+    <button mat-raised-button (click)="libraryService.exportLibraryToCSV()" class="export-button">
       Export
     </button>
     <button mat-raised-button (click)="fileImportInput.click()" class="import-button">
       Import
-      <input type="file" #fileImportInput (change)="importLibraryFromCSV()" accept=".csv"/>
+      <input type="file" #fileImportInput (change)="libraryService.importLibraryFromCSV(fileImportInput)" accept=".csv"/>
     </button>
   </div>
   <div class="table-container">
@@ -61,8 +61,8 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Actions </th>
       <td mat-cell *matCellDef="let book">
-        <button mat-raised-button (click)="editBook()" class="action-button">Edit</button>
-        <button mat-raised-button (click)="deleteBook(book)" class="action-button">Delete</button>
+        <button mat-raised-button (click)="libraryService.editBook(book)" class="action-button">Edit</button>
+        <button mat-raised-button (click)="libraryService.deleteBook(book)" class="action-button">Delete</button>
       </td>
     </ng-container>
   

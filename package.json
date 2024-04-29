@@ -29,6 +29,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "moment": "^2.30.1",
     "ngx-csv": "^0.3.2",
     "ngx-csv-parser": "^2.0.0",
     "rxjs": "~7.8.0",

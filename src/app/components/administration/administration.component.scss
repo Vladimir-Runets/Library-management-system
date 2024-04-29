@@ -17,6 +17,16 @@
 
 .button-container {
   height: 3.5em;
+
+  .add-button, .export-button, .import-button {
+    margin: 1em 0 0 3.5em;
+    border-radius: 2em;
+    background-color: $third-button-color;
+  }
+  
+  .add-button:hover, .export-button:hover, .import-button:hover {
+    border: 1px solid $fourth-color;
+  }
 }
 
 .mat-table {
@@ -36,16 +46,6 @@
     height: auto;
     padding: 1em;
   }
-}
-
-.add-button, .export-button, .import-button {
-  margin: 1em 0 0 3.5em;
-  border-radius: 2em;
-  background-color: $third-button-color;
-}
-
-.add-button:hover, .export-button:hover, .import-button:hover {
-  border: 1px solid $fourth-color;
 }
 
 .action-button {

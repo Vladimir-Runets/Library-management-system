@@ -8,7 +8,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedModule } from '../../shared/shared.module';
-import { NgxCsvParserModule } from 'ngx-csv-parser';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { NgxCsvParserModule } from 'ngx-csv-parser';
     MatSortModule,
     MatPaginatorModule,
     MatButtonModule,
-    SharedModule,
-    NgxCsvParserModule
+    SharedModule
   ],
   exports: [
     AdministrationComponent
