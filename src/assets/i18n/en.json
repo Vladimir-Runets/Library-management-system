@@ -25,5 +25,35 @@
       "passwordLengthWarning": "Password is required. Minimum length: 6.",
       "enterLogin": "Enter login",
       "userUndefinedWarning": "No such user found, try again."
+    },
+    "modalWindow": {
+      "addTitle": "Add book",
+      "editTitle": "Edit book",
+      "bookTitle": "Book title",
+      "bookTitlePlaceholder": "Enter the title of the book",
+      "bookCover": "Book cover",
+      "authorName": "Writer's name",
+      "authorNamePlaceholder": "The name of the author of the book",
+      "bookGenre": "Book genre",
+      "bookGenrePlaceholder": "Choose your genre",
+      "description": "Short description",
+      "descriptionPlaceholder": "Short description of the book",
+      "submitButton": "Submit",
+      "saveButton": "Save",
+      "cancelButton": "Cancel"
+    },
+    "administration": {
+      "addBookDialogButton": "Add book",
+      "exportButton": "Export",
+      "importButton": "Import",
+      "title": "Title",
+      "genre": "Genre",
+      "author": "Author",
+      "description": "Description",
+      "addedDate": "Added date",
+      "status": "Status",
+      "actions": "Actions",
+      "editAction": "Edit",
+      "deleteAction": "Delete" 
     }
   }

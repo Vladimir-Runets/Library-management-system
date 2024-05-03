@@ -10,6 +10,7 @@ import { ModalWindowDialogComponent } from './dialogs/modal-window.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatMenuModule } from '@angular/material/menu';
+import { ImageSelectorModule } from '../components/imageSelector/image-selector.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatDialogModule,
     MatIconModule,
     FontAwesomeModule,
-    MatMenuModule
+    MatMenuModule,
+    ImageSelectorModule
   ],
   exports: [
     LanguageSwitcherComponent,

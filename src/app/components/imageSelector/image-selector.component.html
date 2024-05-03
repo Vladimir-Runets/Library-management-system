@@ -1,0 +1,9 @@
+<div class="image-selector">
+  <div class="image-wrapper">
+    <div *ngFor="let cover of bookCovers">
+      <div class="book-cover" [class.selected]="cover === selectedImage" (click)="selectImage(cover)">
+        <img [src]="cover" alt="">
+      </div>
+    </div>
+  </div>
+</div>
