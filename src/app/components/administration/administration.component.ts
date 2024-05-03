@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { Book } from '../../../app/core/interfaces/book.interface';
 import { LibraryService } from '../../core/services/library.service';
 import { Observable } from 'rxjs';
+import { TranslatorService } from '../../core/services/translator.service';
 
 @Component({
   selector: 'app-administration',
@@ -20,7 +21,7 @@ export class AdministrationComponent implements AfterViewInit, OnInit {
   displayedColumns: string[] = ['title', 'genre', 'author', 'description', 'addedDate', 'status', 'actions'];
   dataSource: MatTableDataSource<Book> = new MatTableDataSource<Book>();
 
-  constructor(private _liveAnnouncer: LiveAnnouncer, public libraryService: LibraryService) {}
+  constructor(private _liveAnnouncer: LiveAnnouncer, public libraryService: LibraryService, public translatorService: TranslatorService) {}
 
   ngOnInit(): void {
     this.libraryService.getBooks.subscribe(books => {

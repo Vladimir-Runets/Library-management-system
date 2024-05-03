@@ -25,5 +25,35 @@
       "passwordLengthWarning": "Неправильный пароль. Минимальная длина: 6.",
       "enterLogin": "Введите логин",
       "userUndefinedWarning": "Такой пользователь не найден, попробуйте ещё раз."
+    },
+    "modalWindow": {
+      "addTitle": "Добавить книгу",
+      "editTitle": "Редактировать книгу",
+      "bookTitle": "Название книги",
+      "bookTitlePlaceholder": "Введите название книги",
+      "bookCover": "Обложка книги",
+      "authorName": "Имя писателя",
+      "authorNamePlaceholder": "Имя автора книги",
+      "bookGenre": "Жанр книги",
+      "bookGenrePlaceholder": "Выберите ваш жанр",
+      "description": "Краткое описание",
+      "descriptionPlaceholder": "Краткое описание книги",
+      "submitButton": "Подтвердить",
+      "saveButton": "Сохранить",
+      "cancelButton": "Отмена"
+    },
+    "administration": {
+      "addBookDialogButton": "Добавить книгу",
+      "exportButton": "Экспорт",
+      "importButton": "Импорт",
+      "title": "Название",
+      "genre": "Жанр",
+      "author": "Автор",
+      "description": "Описание",
+      "addedDate": "Дата добавления",
+      "status": "Статус",
+      "actions": "Действия",
+      "editAction": "Редактировать",
+      "deleteAction": "Удалить" 
     }
   }

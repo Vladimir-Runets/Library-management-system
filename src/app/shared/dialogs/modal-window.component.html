@@ -1,37 +1,50 @@
 <div class="panel">
-  <h2 mat-dialog-title>Add Book</h2>
+  <ng-container *ngIf="isAddButtonClicked; else editTitle">
+    <h2 mat-dialog-title>{{ translatorService.getTranslation('modalWindow.addTitle') }}</h2>
+  </ng-container>
+  <ng-template #editTitle>
+    <h2 mat-dialog-title>{{ translatorService.getTranslation('modalWindow.editTitle') }}</h2>
+  </ng-template>
   <button mat-icon-button mat-dialog-close class="xmark">
     <mat-icon>close</mat-icon>
   </button>
 </div>
 <div mat-dialog-content class="add-book-form">
   <div class="book-container">
-    <mat-label>Book Title</mat-label>
+    <mat-label>{{ translatorService.getTranslation('modalWindow.bookTitle') }}</mat-label>
     <mat-form-field>
-      <input matInput placeholder="Enter the title of the book" [(ngModel)]="book.title">
+      <input matInput [placeholder]="translatorService.getTranslation('modalWindow.bookTitlePlaceholder')" [(ngModel)]="book.title">
     </mat-form-field>
-    <mat-label>Writer's Name</mat-label>
+    <mat-label>{{ translatorService.getTranslation('modalWindow.bookCover') }}</mat-label>
+    <app-image-selector [(ngModel)]="book.imageUrl"></app-image-selector>
+    <mat-label>{{ translatorService.getTranslation('modalWindow.authorName') }}</mat-label>
     <mat-form-field>
-      <input matInput placeholder="The name of the author of the book" [(ngModel)]="book.author">
+      <input matInput [placeholder]="translatorService.getTranslation('modalWindow.authorNamePlaceholder')" [(ngModel)]="book.author">
     </mat-form-field>
-    <mat-label>Book genre</mat-label>
+    <mat-label>{{ translatorService.getTranslation('modalWindow.bookGenre') }}</mat-label>
     <mat-form-field>
-      <mat-select placeholder="Choose your genre" [(ngModel)]="book.genre" name="genre">
+      <mat-select [placeholder]="translatorService.getTranslation('modalWindow.bookGenrePlaceholder')" [(ngModel)]="book.genre" name="genre">
         @for (genre of genres; track genre) {
           <mat-option [value]="genre">{{genre}}</mat-option>
         }
       </mat-select>
     </mat-form-field>
-    <mat-label>Short Description</mat-label>
+    <mat-label>{{ translatorService.getTranslation('modalWindow.description') }}</mat-label>
     <mat-form-field>
-      <textarea matInput placeholder="Short Description of the book" [(ngModel)]="book.description" rows="3"></textarea>
+      <textarea matInput [placeholder]="translatorService.getTranslation('modalWindow.descriptionPlaceholder')" [(ngModel)]="book.description" rows="3"></textarea>
     </mat-form-field>
-  </div>
-  <div class="book-cover">
-    <img src="{{book.imageUrl}}" alt="">
   </div>
 </div>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close (click)="submit(book)" class="submit-button">Submit</button>
-  <button mat-button mat-dialog-close class="cancel-button">Cancel</button>
+  <ng-container *ngIf="isAddButtonClicked; else saveButton">
+    <button mat-button mat-dialog-close (click)="this.libraryService.addBook(book)" class="submit-button">
+      {{ translatorService.getTranslation('modalWindow.submitButton') }}
+    </button>
+  </ng-container>
+  <ng-template #saveButton>
+    <button mat-button mat-dialog-close (click)="this.libraryService.saveChanges(book)" class="submit-button">
+      {{ translatorService.getTranslation('modalWindow.saveButton') }}
+    </button>
+  </ng-template>
+  <button mat-button mat-dialog-close class="cancel-button">{{ translatorService.getTranslation('modalWindow.cancelButton') }}</button>
 </div>

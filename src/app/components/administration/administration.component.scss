@@ -21,11 +21,8 @@
   .add-button, .export-button, .import-button {
     margin: 1em 0 0 3.5em;
     border-radius: 2em;
-    background-color: $third-button-color;
-  }
-  
-  .add-button:hover, .export-button:hover, .import-button:hover {
-    border: 1px solid $fourth-color;
+    background-color: $fourth-color;
+    color: $sixth-color;
   }
 }
 

@@ -1,0 +1,30 @@
+@import '../../../app/assets/colors/variables.scss';
+
+.image-selector {
+    border: 3px solid $third-color;
+    overflow-x: scroll;
+    margin-bottom: 1.5em;
+}
+
+.image-wrapper {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+}
+
+.book-cover {
+    width: 13em;
+    height: 16em;
+}
+  
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+.book-cover.selected {
+    border: 3px solid $primary-color; 
+}
