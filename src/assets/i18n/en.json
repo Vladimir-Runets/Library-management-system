@@ -12,7 +12,8 @@
         "logOut": "LOG OUT"
       },
       "Dashboard": "Dashboard",
-      "Administration": "Administration"
+      "Administration": "Administration",
+      "searchPlaceholder": "Search for the book"
     },
     "loginPage": {
       "signIntoAccount": "Sign Into Your Account",

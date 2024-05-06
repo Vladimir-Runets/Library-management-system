@@ -12,7 +12,8 @@
         "logOut": "ВЫЙТИ"
       },
       "Dashboard": "Главная",
-      "Administration": "Администрация"
+      "Administration": "Администрация",
+      "searchPlaceholder": "Поиск книги"
     },
     "loginPage": {
       "signIntoAccount": "Войдите в свой аккаунт",
