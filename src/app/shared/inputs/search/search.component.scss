@@ -10,7 +10,6 @@
     padding-left: 2em;
     border: none;
     outline: none; 
-    border-bottom: none; 
 }
   
 .search-results {
@@ -18,7 +17,6 @@
     width: 100%;
     background-color: white;
     border-radius: 0 0 1em 1em;
-    border-top: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
   
@@ -26,13 +24,13 @@
     padding: 10px;
     cursor: pointer;
 }
+
+.search-result:last-child {
+    border-radius: 0 0 1em 1em;
+}
   
 .search-result:hover {
     background-color: #f4f4f4;
-}
-  
-.search-container:hover .search-results {
-    display: block;
 }
 
 .searchEngine.has-results {

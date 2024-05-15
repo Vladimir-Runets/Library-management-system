@@ -22,8 +22,10 @@
       "createAccount": "Create New Account",
       "login": "Login",
       "userLogin": "Login",
-      "loginLengthWarning": "Login is required. Minimum length: 3.",
-      "passwordLengthWarning": "Password is required. Minimum length: 6.",
+      "requiredField": "This is a required field!",
+      "hasNotUppercaseAndNumber": "The password must contain uppercase letter and digit!",
+      "hasNotUppercase": "The password must contain at least one uppercase letter!",
+      "hasNotNumber": "The password must contain at least one digit!",
       "enterLogin": "Enter login",
       "userUndefinedWarning": "No such user found, try again."
     },
@@ -54,7 +56,26 @@
       "addedDate": "Added date",
       "status": "Status",
       "actions": "Actions",
-      "editAction": "Edit",
-      "deleteAction": "Delete" 
+      "filter": "Filter",
+      "noDataMathcing": "No data matching the filter"
+    },
+    "book": {
+      "status": {
+        "available": "Available",
+        "borrowed": "Borrowed",
+        "planned": "Planned"
+      }
+    },
+    "genres": {
+      "romance": "Romance",
+      "mystery": "Mystery/Thriller",
+      "scienceFiction": "Science Fiction",
+      "fantasy": "Fantasy",
+      "historicalFiction": "Historical Fiction",
+      "youngAdult": "Young Adult",
+      "crime": "Crime/Detective", 
+      "biography": "Biography/Memoir", 
+      "horror": "Horror", 
+      "essays": "Non-fiction/Essays"
     }
   }

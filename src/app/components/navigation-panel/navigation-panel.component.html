@@ -1,9 +1,9 @@
 <div class="navigation-panel">
   <div class="container">
     <div class="logo"><img src="../assets/images/logo.png" alt=""/></div>
-    <div class="navigation-tab" (click)="navigateTo('dashboard')">{{ translatorService.getTranslation('navigationPanel.Dashboard') }}</div>
+    <div class="navigation-tab" (click)="navigateTo('dashboard')">{{ 'navigationPanel.Dashboard' | translate }}</div>
     <div *ngIf="isAdminIn()" class="navigation-tab" (click)="navigateTo('administration')">
-      {{ translatorService.getTranslation('navigationPanel.Administration') }}</div>
+      {{ 'navigationPanel.Administration' | translate }}</div>
   </div>
   <div class="panel-container">
     <app-search></app-search>
@@ -13,9 +13,9 @@
     <div class="user-dropdown">
       <fa-icon [matMenuTriggerFor]="menu" class="user-icon" [icon]="userIcon"></fa-icon>
       <mat-menu #menu="matMenu" >
-        <div mat-menu-item class="dropdown-item">{{ translatorService.getTranslation('navigationPanel.dropdownUserItems.information') }}</div>
-        <div mat-menu-item class="dropdown-item">{{ translatorService.getTranslation('navigationPanel.dropdownUserItems.settings') }}</div>
-        <div mat-menu-item class="dropdown-item" (click)="loginService.logOut()">{{ translatorService.getTranslation('navigationPanel.dropdownUserItems.logOut') }}</div>
+        <div mat-menu-item class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.information' | translate }}</div>
+        <div mat-menu-item class="dropdown-item">{{ 'navigationPanel.dropdownUserItems.settings' | translate }}</div>
+        <div mat-menu-item class="dropdown-item" (click)="loginService.logOut()">{{ 'navigationPanel.dropdownUserItems.logOut' | translate }}</div>
       </mat-menu>
     </div>
   </div>

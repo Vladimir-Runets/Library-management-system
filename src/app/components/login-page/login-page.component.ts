@@ -1,8 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms'
-import { TranslatorService } from '../../core/services/translator.service';
+import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms'
 import { LoginService } from '../../core/services/login.service';
 
+export function PasswordValidator(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    const password: string = control.value;
+    if (password.length === 0) {
+      return { passwordInvalid: 'requiredField' };
+    }
+  
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
+  
+    if (!hasUppercase && !hasNumber) {
+      return { passwordInvalid: 'hasNotUppercaseAndNumber' };
+    }
+  
+    if (!hasUppercase) {
+      return { passwordInvalid: 'hasNotUppercase' };
+    }
+  
+    if (!hasNumber) {
+      return { passwordInvalid: 'hasNotNumber' };
+    }
+    
+    return null;
+  }
+}
 
 @Component({
   selector: 'app-login',
@@ -13,12 +37,12 @@ export class LoginPageComponent implements OnInit {
   hide: boolean = true;
   loginForm?: FormGroup;
 
-  constructor(private fb: FormBuilder, public translatorService: TranslatorService, public loginService: LoginService) {}
+  constructor(private fb: FormBuilder, public loginService: LoginService) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      login: ['', [Validators.required, Validators.minLength(3)]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      login: ['', [Validators.required]],
+      password: ['', [Validators.required, PasswordValidator()]]
     });
   }
 

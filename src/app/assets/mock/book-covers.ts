@@ -1,4 +1,4 @@
-const bookCovers: string[] = [
+export const BookCovers: string[] = [
     '/assets/images/cover1.jpg',
     '/assets/images/cover2.png',
     '/assets/images/cover3.png',
@@ -6,5 +6,3 @@ const bookCovers: string[] = [
     '/assets/images/cover5.jpg',
     '/assets/images/cover6.png'
 ]
-
-export default bookCovers;

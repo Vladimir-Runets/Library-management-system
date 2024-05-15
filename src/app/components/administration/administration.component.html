@@ -1,82 +1,84 @@
-<div class="main-container">
-  <app-navigation-panel></app-navigation-panel>
-  <div class="button-container">
-    <button mat-raised-button (click)="libraryService.openAddBookDialog()" class="add-button">
-      {{ translatorService.getTranslation('administration.addBookDialogButton') }}
-    </button>
-    <button mat-raised-button (click)="libraryService.exportLibraryToCSV()" class="export-button">
-      {{ translatorService.getTranslation('administration.exportButton') }}
-    </button>
-    <button mat-raised-button (click)="fileImportInput.click()" class="import-button">
-      {{ translatorService.getTranslation('administration.importButton') }}
-      <input type="file" #fileImportInput (change)="libraryService.importLibraryFromCSV(fileImportInput)" accept=".csv"/>
-    </button>
-  </div>
-  <div class="table-container">
-    <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
-         class="mat-elevation-z8">
-  
-    <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by title">
-        {{ translatorService.getTranslation('administration.title') }}
-      </th>
-      <td mat-cell *matCellDef="let book"> {{book.title}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="genre">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by genre">
-        {{ translatorService.getTranslation('administration.genre') }}
-      </th>
-      <td mat-cell *matCellDef="let book"> {{book.genre}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="author">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by author">
-        {{ translatorService.getTranslation('administration.author') }}
-      </th>
-      <td mat-cell *matCellDef="let book"> {{book.author}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by description">
-        {{ translatorService.getTranslation('administration.description') }}
-      </th>
-      <td mat-cell *matCellDef="let book"> {{book.description}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="addedDate">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by addedDate">
-        {{ translatorService.getTranslation('administration.addedDate') }}
-      </th>
-      <td mat-cell *matCellDef="let book"> {{book.addedDate | date: 'dd/MM/yyyy'}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="status">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by status">
-        {{ translatorService.getTranslation('administration.status') }}
-      </th>
-      <td mat-cell *matCellDef="let book"> {{book.status}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef> {{ translatorService.getTranslation('administration.actions') }} </th>
-      <td mat-cell *matCellDef="let book">
-        <button mat-raised-button (click)="libraryService.openEditBookDialog(book)" class="action-button">
-          {{ translatorService.getTranslation('administration.editAction') }}
-        </button>
-        <button mat-raised-button (click)="libraryService.deleteBook(book)" class="action-button">
-          {{ translatorService.getTranslation('administration.deleteAction') }}
-        </button>
-      </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  
-    <mat-paginator [pageSizeOptions]="[5, 10, 20, 50]"
-                   showFirstLastButtons
-                   aria-label="Select page of books">
-    </mat-paginator>
-  </div>
+<div class="button-container">
+  <button mat-raised-button (click)="libraryService.openAddBookDialog()" class="add-button">
+    {{ 'administration.addBookDialogButton' | translate }}
+  </button>
+  <button mat-raised-button (click)="libraryService.exportLibraryToCSV()" class="export-button">
+    {{ 'administration.exportButton' | translate }}
+  </button>
+  <button mat-raised-button (click)="fileImportInput.click()" class="import-button">
+    {{ 'administration.importButton' | translate }}
+    <input type="file" #fileImportInput (change)="libraryService.importLibraryFromCSV(fileImportInput)" accept=".csv"/>
+  </button>
+  <input matInput (keyup)="applyFilter($event)" [placeholder]="'administration.filter' | translate" #input class="filter">
+</div>
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+       class="mat-elevation-z8">
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by title">
+      {{ 'administration.title' | translate }}
+    </th>
+    <td mat-cell *matCellDef="let book"> {{book.title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="genre">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by genre">
+      {{ 'administration.genre' | translate }}
+    </th>
+    <td mat-cell *matCellDef="let book"> {{book.genre | translate}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="author">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by author">
+      {{ 'administration.author' | translate }}
+    </th>
+    <td mat-cell *matCellDef="let book"> {{book.author}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by description">
+      {{ 'administration.description' | translate }}
+    </th>
+    <td mat-cell *matCellDef="let book"> {{book.description}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="addedDate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by addedDate">
+      {{ 'administration.addedDate' | translate }}
+    </th>
+    <td mat-cell *matCellDef="let book"> {{book.addedDate | date: 'dd/MM/yyyy'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by status">
+      {{ 'administration.status' | translate }}
+    </th>
+    <td mat-cell *matCellDef="let book"> {{'book.status.' + book.status | translate}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> {{ 'administration.actions' | translate }} </th>
+    <td mat-cell *matCellDef="let book">
+      <button mat-raised-button (click)="libraryService.openEditBookDialog(book)" class="action-button">
+        <fa-icon [icon]="editIcon"></fa-icon>
+      </button>
+      <button mat-raised-button (click)="libraryService.deleteBook(book)" class="action-button">
+        <fa-icon [icon]="deleteIcon"></fa-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell noDataMathcing" colspan="7">{{ 'administration.noDataMathcing' | translate }} "{{input.value}}"</td>
+  </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20, 50]"
+                 showFirstLastButtons
+                 aria-label="Select page of books">
+  </mat-paginator>
 </div>

@@ -1,7 +1,8 @@
-import { BookStatus } from "../enums/book-status.enum";
+import { BOOK_STATUS } from "../enums/book-status.enum";
 import { User } from "./user.interface";
 
 export interface Book {
+    id: string;
     imageUrl: string;
     title: string;
     genre: string;
@@ -9,5 +10,5 @@ export interface Book {
     description: string;
     addedDate: Date;
     borrower?: User;
-    status: BookStatus;
+    status: BOOK_STATUS;
   }

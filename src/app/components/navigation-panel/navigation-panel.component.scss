@@ -1,4 +1,4 @@
-@import '../../../app/assets/colors/variables.scss';
+@import '../../../assets/colors/variables.scss';
 
 .navigation-panel {
   position: sticky;
@@ -9,7 +9,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 100px;
+  height: 85px;
 }
 
 .navigation-tab {
@@ -78,7 +78,7 @@
 }
 
 .logo img {
-  height: 100px;
+  height: 85px;
 }
 
 @media (max-width: 768px) {
