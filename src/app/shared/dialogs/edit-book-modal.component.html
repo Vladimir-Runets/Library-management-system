@@ -25,7 +25,7 @@
     <mat-form-field>
       <mat-select [placeholder]="'modalWindow.bookGenrePlaceholder' | translate" [(ngModel)]="book.genre" name="genre">
         @for (genre of genres; track genre) {
-          <mat-option [value]="'genres.' + genre">{{'genres.' + genre | translate}}</mat-option>
+          <mat-option [value]="genre">{{'genres.' + genre | translate}}</mat-option>
         }
       </mat-select>
     </mat-form-field>
