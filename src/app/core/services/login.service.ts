@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../interfaces/user.interface';
-import { UserRole } from "../../core/enums/user-role.enum";
-import users from "../../../app/assets/mock/users";
+import { USER_ROLE } from "../../core/enums/user-role.enum";
+import { Users } from "../../../app/assets/mock/users";
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +16,13 @@ export class LoginService {
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   login(username: string, password: string): void {
-    const user = users.find((user: User) => user.username === username && user.password === password); 
+    const user = Users.find((user: User) => user.username === username && user.password === password); 
 
     if (user) {
       this.isLogged = true;
       this.loggedUser = user;
       localStorage.setItem(this.localStorageKey, JSON.stringify(user));
-      if(user.role === UserRole.Admin){
+      if(user.role === USER_ROLE.Admin){
         this.router.navigate(['/administration'], {relativeTo: this.route});
       }
       else{

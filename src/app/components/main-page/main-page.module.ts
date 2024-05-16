@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { BookCardModule } from '../book-card/book-card.module';
-import { DashboardComponent } from './dashboard.component';
 import { NavigationPanelModule } from '../navigation-panel/navigation-panel.module';
+import { MainPageComponent } from './main-page.component';
+import { RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    MainPageComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
-    BookCardModule,
-    NavigationPanelModule
+    NavigationPanelModule,
+    RouterOutlet
   ],
   exports: [
-    DashboardComponent
+    MainPageComponent
   ]
 })
-export class DashboardModule { }
+export class MainPageModule { }

@@ -9,10 +9,10 @@
       <div class="title">{{ book?.title }}</div>
       <div class="author">{{ book?.author }}</div>
       <div class="description">{{ book?.description }}</div>
-      <div class="genre">{{ book?.genre }}</div>
+      <div class="genre">{{ 'genres.' + book?.genre | translate }}</div>
       <div class="status">
         <span class="status-indicator" [ngClass]="{ 'green': book?.status === bookStatus.Available, 'red': book?.status === bookStatus.Borrowed , 'yellow': book?.status === bookStatus.Planned }"></span>
-        {{ book?.status }}
+        {{ 'book.status.' + book?.status | translate }}
       </div>
     </div>
   </div>

@@ -12,7 +12,8 @@
         "logOut": "ВЫЙТИ"
       },
       "Dashboard": "Главная",
-      "Administration": "Администрация"
+      "Administration": "Администрация",
+      "searchPlaceholder": "Поиск книги"
     },
     "loginPage": {
       "signIntoAccount": "Войдите в свой аккаунт",
@@ -21,8 +22,10 @@
       "createAccount": "Создать новый аккаунт",
       "login": "Войти",
       "userLogin": "Логин", 
-      "loginLengthWarning": "Неправильный логин. Минимальная длина: 3.",
-      "passwordLengthWarning": "Неправильный пароль. Минимальная длина: 6.",
+      "requiredField": "Это обязательное поле!",
+      "hasNotUppercaseAndNumber": "Пароль должен содержать заглавную букву и цифру!",
+      "hasNotUppercase": "Пароль должен содержать как минимум одну заглавную букву!",
+      "hasNotNumber": "Пароль должен содержать как минимум одну цифру!",
       "enterLogin": "Введите логин",
       "userUndefinedWarning": "Такой пользователь не найден, попробуйте ещё раз."
     },
@@ -53,7 +56,26 @@
       "addedDate": "Дата добавления",
       "status": "Статус",
       "actions": "Действия",
-      "editAction": "Редактировать",
-      "deleteAction": "Удалить" 
+      "filter": "Фильтр",
+      "noDataMathcing": "Нет данных, соответствующих фильтру"
+    },
+    "book": {
+      "status": {
+        "available": "В наличии",
+        "borrowed": "Занята",
+        "planned": "Планируется"
+      }
+    }, 
+    "genres": {
+      "romance": "Романтика",
+      "mystery": "Мистика/Триллер",
+      "scienceFiction": "Научная фантастика",
+      "fantasy": "Фэнтези",
+      "historicalFiction": "Историческая проза",
+      "youngAdult": "Молодежная литература",
+      "crime": "Криминал/Детектив", 
+      "biography": "Биография/Мемуары", 
+      "horror": "Хоррор", 
+      "essays": "Научная литература/Эссе"
     }
   }
