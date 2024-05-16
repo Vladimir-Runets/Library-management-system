@@ -11,8 +11,6 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AdministrationModule } from './components/administration/administration.module';
 import { DashboardModule } from './components/dashboard/dashboard.module';
-import { MainPageModule } from './components/main-page/main-page.module';
-import { BookReviewModule } from './components/book-review/book-review.module';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -30,8 +28,6 @@ export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
     HttpClientModule,
     AdministrationModule,
     DashboardModule,
-    MainPageModule,
-    BookReviewModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

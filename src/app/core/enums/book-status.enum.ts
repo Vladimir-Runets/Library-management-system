@@ -1,5 +1,5 @@
-export enum BOOK_STATUS {
-  Available = 'available',
-  Borrowed = 'borrowed',
-  Planned = 'planned'
-}
+export enum BookStatus {
+    Available = 'В наличии',
+    Borrowed = 'Занята',
+    Planned = 'Планируется'
+  }

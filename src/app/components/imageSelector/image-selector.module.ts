@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { BookReviewComponent } from './book-review.component';
-import { MatCardModule } from '@angular/material/card';
+import { ImageSelectorComponent } from './image-selector.component';
 
 @NgModule({
   declarations: [
-    BookReviewComponent
+    ImageSelectorComponent
   ],
   imports: [
     FormsModule,
-    BrowserModule,
-    MatCardModule
+    BrowserModule
   ],
   exports: [
-    BookReviewComponent
+    ImageSelectorComponent
   ]
 })
-export class BookReviewModule { }
+export class ImageSelectorModule { }

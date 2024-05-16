@@ -3,23 +3,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { BookCardComponent } from './book-card.component';
-import { TranslationPipeModule } from '../../pipes/translate.pipe.module';
+import { BookComponent } from './book.component';
 
 @NgModule({
   declarations: [
-    BookCardComponent
+    BookComponent
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
     MatButtonModule,
-    MatCardModule,
-    TranslationPipeModule 
+    MatCardModule 
   ],
   exports: [
-    BookCardComponent
+    BookComponent
   ]
 })
-export class BookCardModule { }
+export class BookModule { }

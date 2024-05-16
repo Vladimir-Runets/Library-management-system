@@ -8,8 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { SharedModule } from '../../shared/shared.module';
-import { SearchComponent } from '../../shared/inputs/search/search.component';
-import { TranslationPipeModule } from '../../pipes/translate.pipe.module';
 
 @NgModule({
   declarations: [
@@ -24,8 +22,6 @@ import { TranslationPipeModule } from '../../pipes/translate.pipe.module';
     MatFormFieldModule,
     MatMenuModule,
     SharedModule,
-    SearchComponent,
-    TranslationPipeModule
   ],
   exports: [
     NavigationPanelComponent

@@ -2,13 +2,12 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, take } from 'rxjs';
 import { Book } from '../../core/interfaces/book.interface';
 import { ngxCsv } from 'ngx-csv/ngx-csv';
-import { BOOK_STATUS } from '../../core/enums/book-status.enum';
+import { BookStatus } from '../../core/enums/book-status.enum';
 import { NgxCsvParser, NgxCSVParserError } from 'ngx-csv-parser';
-import { Books } from '../../../app/assets/mock/books';
+import books from '../../../app/assets/mock/books';
 import moment from 'moment';
 import { MatDialog } from '@angular/material/dialog';
-import { EditBookModalDialogComponent } from '../../shared/dialogs/edit-book-modal.component';
-import { v4 as uuidv4 } from 'uuid';
+import { ModalWindowDialogComponent } from '../../shared/dialogs/modal-window.component';
 
 @Injectable({
     providedIn: 'root'
@@ -18,32 +17,23 @@ export class LibraryService {
   header: boolean = false;
   editedBookIndex!: number;
   private books: Book[] = [];
-  private booksSubject$: BehaviorSubject<Book[]> = new BehaviorSubject<Book[]>(Books);
+  private booksSubject$: BehaviorSubject<Book[]> = new BehaviorSubject<Book[]>(books);
 
   constructor(private ngxCsvParser: NgxCsvParser, public dialog: MatDialog) { 
-    this.initializeBooks();
-  }
-
-  private initializeBooks(): void {
     const localBooks = localStorage.getItem(this.localStorageKey);
     if (localBooks) {
       this.books = JSON.parse(localBooks);
     } else {
-      this.books = Books;
+      this.books = books;
     }
     this.booksSubject$.next(this.books);
   }
 
-  get getBooks$(): Observable<Book[]> {
+  get getBooks(): Observable<Book[]> {
     return this.booksSubject$.asObservable();
   }
 
-  findBookById(id: string): Book | undefined {
-    return this.books.find((book: Book) => book.id === id);
-  }
-
   addBook(book: Book): void {
-    book.id = uuidv4();
     this.books.push(book);
     localStorage.setItem(this.localStorageKey, JSON.stringify(this.books));
     this.booksSubject$.next(this.books);
@@ -64,13 +54,15 @@ export class LibraryService {
 
   openEditBookDialog(book: Book): void {
     this.editedBookIndex = this.books.indexOf(book);
-    this.dialog.open(EditBookModalDialogComponent, {
-      data: { book}
+    this.dialog.open(ModalWindowDialogComponent, {
+      data: { book, isAddButtonClicked: false}
     });
   }
   
   openAddBookDialog(): void {
-    this.dialog.open(EditBookModalDialogComponent);
+    this.dialog.open(ModalWindowDialogComponent, {
+      data: { isAddButtonClicked: true }
+    });
   }
 
   public exportLibraryToCSV(): void {
@@ -83,6 +75,7 @@ export class LibraryService {
       useBom: true,
       noDownload: false,
       headers: []
+      //headers: ['imageUrl', 'title', 'genre', 'author', 'description', 'addedDate', 'status']
     };
 
     const csvData = this.books.map((book: Book) => {
@@ -111,7 +104,6 @@ export class LibraryService {
         next: (result): void => {
           const books: Book[] = (result as string[]).map((item: string) => {
             return {
-              id: uuidv4(),
               imageUrl: item[0],
               title: item[1],
               genre: item[2],
@@ -133,16 +125,16 @@ export class LibraryService {
     }
   }
 
-  getStatusByValue(statusValue: string): BOOK_STATUS {
+  getStatusByValue(statusValue: string): BookStatus {
     switch (statusValue) {
-      case 'available':
-        return BOOK_STATUS.Available;
-      case 'borrowed':
-        return BOOK_STATUS.Borrowed;
-      case 'planned':
-        return BOOK_STATUS.Planned;
+      case 'В наличии':
+        return BookStatus.Available;
+      case 'Занята':
+        return BookStatus.Borrowed;
+      case 'Планируется':
+        return BookStatus.Planned;
       default:
-        return BOOK_STATUS.Available;
+        return BookStatus.Available;
     }
   }
 }

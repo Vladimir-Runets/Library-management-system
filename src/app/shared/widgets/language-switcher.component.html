@@ -1,7 +1,14 @@
+<!-- <mat-form-field class="language-switcher-dropdown">
+    <mat-select matNativeControl panelClass="switcher-dropdown-content" [(ngModel)]="translatorService.language" (ngModelChange)="translatorService.onLanguageChange($event)">
+      <mat-option value="ru" class="dropdown-item">{{ translatorService.getTranslation('navigationPanel.dropdownLangItems.RU') }}</mat-option>
+      <mat-option value="en" class="dropdown-item">{{ translatorService.getTranslation('navigationPanel.dropdownLangItems.EN') }}</mat-option>
+    </mat-select>
+</mat-form-field> -->
+
 <div class="language-switcher-dropdown">
   <fa-icon [matMenuTriggerFor]="menu" class="switcher-dropdown-content" [icon]="langSwitcherIcon"></fa-icon>
       <mat-menu #menu="matMenu" >
-        <div mat-menu-item (click)="translatorService.onLanguageChange('ru')">{{ 'navigationPanel.dropdownLangItems.RU' | translate }}</div>
-        <div mat-menu-item (click)="translatorService.onLanguageChange('en')">{{ 'navigationPanel.dropdownLangItems.EN' | translate }}</div>
+        <div mat-menu-item (click)="translatorService.onLanguageChange('ru')">{{ translatorService.getTranslation('navigationPanel.dropdownLangItems.RU') }}</div>
+        <div mat-menu-item (click)="translatorService.onLanguageChange('en')">{{ translatorService.getTranslation('navigationPanel.dropdownLangItems.EN') }}</div>
       </mat-menu>
 </div>

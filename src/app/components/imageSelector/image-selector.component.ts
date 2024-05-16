@@ -1,13 +1,9 @@
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { Component, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { BookCovers } from '../../../assets/mock/book-covers';
+import bookCovers from '../../../app/assets/mock/book-covers';
 
 @Component({
   selector: 'app-image-selector',
-  standalone: true,
-  imports: [FormsModule, BrowserModule],
   templateUrl: './image-selector.component.html',
   styleUrls: ['./image-selector.component.scss'],
   providers: [
@@ -19,7 +15,7 @@ import { BookCovers } from '../../../assets/mock/book-covers';
   ]
 })
 export class ImageSelectorComponent implements ControlValueAccessor {
-  bookCovers: string[] = BookCovers;
+  bookCovers: string[] = bookCovers;
   selectedImage!: string;
 
   onChange!: (value: string) => void;

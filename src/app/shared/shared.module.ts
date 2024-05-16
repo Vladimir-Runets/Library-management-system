@@ -6,17 +6,16 @@ import { LanguageSwitcherComponent } from './widgets/language-switcher.component
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-import { EditBookModalDialogComponent } from './dialogs/edit-book-modal.component';
+import { ModalWindowDialogComponent } from './dialogs/modal-window.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatMenuModule } from '@angular/material/menu';
-import { ImageSelectorComponent } from './inputs/image-selector/image-selector.component';
-import { TranslationPipeModule } from '../pipes/translate.pipe.module';
+import { ImageSelectorModule } from '../components/imageSelector/image-selector.module';
 
 @NgModule({
   declarations: [
     LanguageSwitcherComponent, 
-    EditBookModalDialogComponent
+    ModalWindowDialogComponent
   ],
   imports: [
     FormsModule,
@@ -29,12 +28,11 @@ import { TranslationPipeModule } from '../pipes/translate.pipe.module';
     MatIconModule,
     FontAwesomeModule,
     MatMenuModule,
-    ImageSelectorComponent,
-    TranslationPipeModule
+    ImageSelectorModule
   ],
   exports: [
     LanguageSwitcherComponent,
-    EditBookModalDialogComponent,
+    ModalWindowDialogComponent
   ]
 })
 export class SharedModule { }

@@ -5,29 +5,29 @@
   <mat-card>
     <mat-card-content>
       <div class="header">
-        <h1>{{ 'loginPage.signIntoAccount' | translate }}</h1>
+        <h1>{{ translatorService.getTranslation('loginPage.signIntoAccount') }}</h1>
       </div>
       <form name="loginForm" *ngIf="loginForm" [formGroup]="loginForm">
         <div class="loginInput">
           <mat-form-field class="full-width" appearance="outline">
-            <mat-label>{{ 'loginPage.userLogin' | translate }}</mat-label>
+            <mat-label>{{ translatorService.getTranslation('loginPage.userLogin') }}</mat-label>
             <input
               formControlName="login"
               matInput
-              [placeholder]="'loginPage.enterLogin' | translate" required
+              [placeholder]="translatorService.getTranslation('loginPage.enterLogin')" required
             />
             <mat-error *ngIf="!loginForm.controls['login'].valid">
-              {{ 'loginPage.requiredField' | translate }}
+              {{ translatorService.getTranslation('loginPage.loginLengthWarning') }}
               </mat-error>
           </mat-form-field>
         </div>
 
         <div>
           <span>
-            <a class="text-link" class="aLink" routerLink="/auth/forgot-password">{{ 'loginPage.forgotPassword' | translate }}</a>
+            <a class="text-link" class="aLink" routerLink="/auth/forgot-password">{{ translatorService.getTranslation('loginPage.forgotPassword') }}</a>
           </span>
           <mat-form-field class="full-width password-field" appearance="outline">
-            <mat-label>{{ 'loginPage.password' | translate }}</mat-label>
+            <mat-label>{{ translatorService.getTranslation('loginPage.password') }}</mat-label>
             <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
             <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
             [attr.aria-pressed]="hide">
@@ -36,23 +36,23 @@
             </mat-icon>
         </button>
         <mat-error *ngIf="!loginForm.controls['password'].valid">
-          {{ 'loginPage.' + loginForm.get('password')?.errors?.['passwordInvalid'] | translate }}
-        </mat-error>
+          {{ translatorService.getTranslation('loginPage.passwordLengthWarning') }}
+          </mat-error>
         </mat-form-field>
         </div>
         <button mat-flat-button type="button" color="primary" (click)="onLogin()">
-          {{ 'loginPage.login' | translate }}
+          {{ translatorService.getTranslation('loginPage.login') }}
         </button>
       </form>
 
       <div class="button-row">
-        <p>{{ 'loginPage.createAccount' | translate }}</p>
+        <p>{{ translatorService.getTranslation('loginPage.createAccount') }}</p>
       </div>
     </mat-card-content>
   </mat-card>
 </div>
 <div *ngIf="loginService.showErrorMessage" class="error-message">
   <img src="../assets/images/notFound.png" alt=""/>
-  <span>{{ 'loginPage.userUndefinedWarning' | translate }}</span>
+  <span>{{ translatorService.getTranslation('loginPage.userUndefinedWarning') }}</span>
   <button (click)="dismissErrorMessage()" class="close-button">✕</button>
 </div>

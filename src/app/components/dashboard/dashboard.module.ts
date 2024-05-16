@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { BookCardModule } from '../book-card/book-card.module';
+import { BookModule } from '../book/book.module';
 import { DashboardComponent } from './dashboard.component';
 import { NavigationPanelModule } from '../navigation-panel/navigation-panel.module';
 
@@ -12,7 +12,7 @@ import { NavigationPanelModule } from '../navigation-panel/navigation-panel.modu
   imports: [
     FormsModule,
     BrowserModule,
-    BookCardModule,
+    BookModule,
     NavigationPanelModule
   ],
   exports: [

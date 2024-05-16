@@ -1,8 +1,8 @@
-@import '../../../assets/colors/variables.scss';
+@import '../../../app/assets/colors/variables.scss';
 
 .book-card {
   background-color: $book-card-background;
-  margin: 5% 15%;
+  margin: 5% 5% 0% 5%;
   display: flex;
   border: 1px solid transparent;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -17,7 +17,6 @@
 
 .card-content {
   display: flex;
-  flex-direction: row;
 }
 
 .book-image {
@@ -25,7 +24,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 3%;
 }
 
 .image {
@@ -54,11 +52,41 @@
 .author {
   font-size: smaller;
   font-style: italic;
+  margin-top: 5px;
 }
 
-.title, .author, .description, .genre, .status {
-  font-size: 2.5em;
-  padding: .5em;
+.description {
+  margin-top: 10px;
+}
+
+.genre {
+  margin-top: 5px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
 }
 
 @media (max-width: $medium-breakpoint) {

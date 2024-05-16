@@ -9,7 +9,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from '../../shared/shared.module';
-import { TranslationPipeModule } from '../../pipes/translate.pipe.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import { TranslationPipeModule } from '../../pipes/translate.pipe.module';
     MatCardModule,
     MatIconModule,
     SharedModule,
-    TranslationPipeModule
   ],
   exports: [
     LoginPageComponent
