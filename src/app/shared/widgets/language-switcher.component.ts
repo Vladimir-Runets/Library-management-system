@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslatorService } from '../../core/services/translator.service';
-import { faEarthEurope } from '@fortawesome/free-solid-svg-icons'
+import { IconDefinition, faEarthEurope } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-language-switcher',
@@ -8,7 +8,7 @@ import { faEarthEurope } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./language-switcher.component.scss']
 })
 export class LanguageSwitcherComponent {
-  langSwitcherIcon = faEarthEurope;
+  langSwitcherIcon: IconDefinition = faEarthEurope;
 
   constructor(public translatorService: TranslatorService){}
 }

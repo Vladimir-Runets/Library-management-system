@@ -1,9 +1,8 @@
 import { User } from "../../core/interfaces/user.interface";
-import { UserRole } from "../../core/enums/user-role.enum";
+import { USER_ROLE } from "../../core/enums/user-role.enum";
+import { v4 as uuidv4 } from 'uuid';
 
-const users: User[] = [
-    { username: 'Vladimir', password: 'V1o2v3a4', lastLogged: new Date(), role: UserRole.User },
-    { username: 'Admin', password: 'password', lastLogged: new Date(), role: UserRole.Admin },
+export const Users: User[] = [
+    { id: uuidv4(), username: 'Vladimir', password: 'V1o2v3a4', lastLogged: new Date(), role: USER_ROLE.User },
+    { id: uuidv4(), username: 'Admin', password: 'Password1', lastLogged: new Date(), role: USER_ROLE.Admin },
 ];
-
-export default users;

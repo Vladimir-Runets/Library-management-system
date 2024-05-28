@@ -8,6 +8,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedModule } from '../../shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatInputModule } from '@angular/material/input';
+import { TranslationPipeModule } from '../../pipes/translate.pipe.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { SharedModule } from '../../shared/shared.module';
     MatSortModule,
     MatPaginatorModule,
     MatButtonModule,
-    SharedModule
+    SharedModule,
+    FontAwesomeModule,
+    MatInputModule,
+    TranslationPipeModule
   ],
   exports: [
     AdministrationComponent

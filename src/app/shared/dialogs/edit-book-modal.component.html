@@ -1,0 +1,50 @@
+<div class="panel">
+  <ng-container *ngIf="!isEditDialog; else editTitle">
+    <h2 mat-dialog-title>{{ 'modalWindow.addTitle' | translate }}</h2>
+  </ng-container>
+  <ng-template #editTitle>
+    <h2 mat-dialog-title>{{ 'modalWindow.editTitle' | translate }}</h2>
+  </ng-template>
+  <button mat-icon-button mat-dialog-close class="xmark">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<div mat-dialog-content class="add-book-form">
+  <div class="book-container">
+    <mat-label>{{ 'modalWindow.bookTitle' | translate }}</mat-label>
+    <mat-form-field>
+      <input matInput [placeholder]="'modalWindow.bookTitlePlaceholder' | translate" [(ngModel)]="book.title">
+    </mat-form-field>
+    <mat-label>{{ 'modalWindow.bookCover' | translate }}</mat-label>
+    <app-image-selector [(ngModel)]="book.imageUrl"></app-image-selector>
+    <mat-label>{{ 'modalWindow.authorName' | translate }}</mat-label>
+    <mat-form-field>
+      <input matInput [placeholder]="'modalWindow.authorNamePlaceholder' | translate" [(ngModel)]="book.author">
+    </mat-form-field>
+    <mat-label>{{ 'modalWindow.bookGenre' | translate }}</mat-label>
+    <mat-form-field>
+      <mat-select [placeholder]="'modalWindow.bookGenrePlaceholder' | translate" [(ngModel)]="book.genre" name="genre">
+        @for (genre of genres; track genre) {
+          <mat-option [value]="genre">{{'genres.' + genre | translate}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <mat-label>{{ 'modalWindow.description' | translate }}</mat-label>
+    <mat-form-field>
+      <textarea matInput [placeholder]="'modalWindow.descriptionPlaceholder' | translate" [(ngModel)]="book.description" rows="3"></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <ng-container *ngIf="!isEditDialog; else saveButton">
+    <button mat-button mat-dialog-close (click)="this.libraryService.addBook(book)" class="submit-button">
+      {{ 'modalWindow.submitButton' | translate }}
+    </button>
+  </ng-container>
+  <ng-template #saveButton>
+    <button mat-button mat-dialog-close (click)="this.libraryService.saveChanges(book)" class="submit-button">
+      {{ 'modalWindow.saveButton' | translate }}
+    </button>
+  </ng-template>
+  <button mat-button mat-dialog-close class="cancel-button">{{ 'modalWindow.cancelButton' | translate }}</button>
+</div>

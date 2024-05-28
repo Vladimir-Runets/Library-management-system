@@ -1,10 +1,4 @@
-@import '../../../app/assets/colors/variables.scss';
-
-.main-container {
-  height: 100vh;
-  overflow-y: auto;
-  background-color: $light-background;
-}
+@import '../../../assets/colors/variables.scss';
 
 .cards-container {
   display: grid;
