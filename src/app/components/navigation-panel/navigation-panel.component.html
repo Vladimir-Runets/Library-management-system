@@ -2,7 +2,7 @@
   <div class="container">
     <div class="logo"><img src="../assets/images/logo.png" alt=""/></div>
     <div class="navigation-tab" (click)="navigateTo('dashboard')">{{ 'navigationPanel.Dashboard' | translate }}</div>
-    <div *ngIf="isAdminIn()" class="navigation-tab" (click)="navigateTo('administration')">
+    <div *ngIf="loginService.isAdminIn()" class="navigation-tab" (click)="navigateTo('administration')">
       {{ 'navigationPanel.Administration' | translate }}</div>
   </div>
   <div class="panel-container">
