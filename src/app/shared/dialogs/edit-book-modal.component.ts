@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Book } from '../../core/interfaces/book.interface';
 import { Genres } from '../../assets/mock/genres';
@@ -11,7 +11,7 @@ import { v4 as uuidv4 } from 'uuid';
   templateUrl: './edit-book-modal.component.html',
   styleUrls: ['./edit-book-modal.component.scss']
 })
-export class EditBookModalDialogComponent {
+export class EditBookModalDialogComponent implements OnInit{
   isEditDialog: boolean = false; 
   book: Book = {
     id: uuidv4(),
@@ -25,7 +25,9 @@ export class EditBookModalDialogComponent {
   };
   genres: string[] = Genres;
 
-  constructor(public libraryService: LibraryService, @Inject(MAT_DIALOG_DATA) public data: { book: Book }){
+  constructor(public libraryService: LibraryService, @Inject(MAT_DIALOG_DATA) public data: { book: Book }){}
+
+  ngOnInit(): void {
     if(this.data?.book){
       this.book = JSON.parse(JSON.stringify(this.data?.book));
       this.isEditDialog = true;

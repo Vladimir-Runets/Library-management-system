@@ -39,4 +39,10 @@ export class LoginService {
     localStorage.removeItem(this.localStorageKey);
     this.router.navigate(['/login'], {relativeTo: this.route});
   }
+
+  isAdminIn(): boolean{
+    const isAdminIn = localStorage.getItem(this.localStorageKey);
+    const user: User | null = isAdminIn ? JSON.parse(isAdminIn) : null;
+    return user?.role === USER_ROLE.Admin || this.loggedUser?.role === USER_ROLE.Admin;
+  }
 }

@@ -7,6 +7,12 @@
   border: 2px solid $fourth-color;
   border-radius: 1em;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-wrapper {
+  overflow-x: auto;
 }
 
 table {
@@ -19,6 +25,7 @@ th, td {
   width: auto;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 200px;
 }
 
 .button-container {

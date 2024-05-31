@@ -1,32 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms'
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { LoginService } from '../../core/services/login.service';
-
-export function PasswordValidator(): ValidatorFn {
-  return (control: AbstractControl): ValidationErrors | null => {
-    const password: string = control.value;
-    if (password.length === 0) {
-      return { passwordInvalid: 'requiredField' };
-    }
-  
-    const hasUppercase = /[A-Z]/.test(password);
-    const hasNumber = /[0-9]/.test(password);
-  
-    if (!hasUppercase && !hasNumber) {
-      return { passwordInvalid: 'hasNotUppercaseAndNumber' };
-    }
-  
-    if (!hasUppercase) {
-      return { passwordInvalid: 'hasNotUppercase' };
-    }
-  
-    if (!hasNumber) {
-      return { passwordInvalid: 'hasNotNumber' };
-    }
-    
-    return null;
-  }
-}
+import { PasswordValidator } from '../../core/validators/password-validator';
 
 @Component({
   selector: 'app-login',
