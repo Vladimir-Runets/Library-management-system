@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,11 @@ import { AdministrationModule } from './components/administration/administration
 import { DashboardModule } from './components/dashboard/dashboard.module';
 import { MainPageModule } from './components/main-page/main-page.module';
 import { BookReviewModule } from './components/book-review/book-review.module';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './app.effects';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -39,7 +44,12 @@ export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
         deps: [HttpClient],
       },
       defaultLanguage: 'ru'
-    })
+    }),
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([AppEffects])
   ],
   providers: [
     provideAnimationsAsync()
